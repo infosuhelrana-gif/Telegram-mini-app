@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telegram Mini App</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101827;color:white;font-family:Arial,sans-serif}
+header{padding:20px;background:#1d2b43;text-align:center}
+.balance,.panel{background:#263b5b;padding:18px;margin:12px 0;border-radius:14px}
+.balance{text-align:center}
+.balance h1{color:#55e6a5}
+main{padding:15px;padding-bottom:90px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.item{background:#263b5b;padding:18px 8px;border-radius:12px;text-align:center}
+button{background:#16a878;color:white;border:0;border-radius:8px;padding:10px;margin-top:8px}
+nav{position:fixed;bottom:0;left:0;right:0;background:#1d2b43;display:flex;justify-content:space-around;padding:10px 2px}
+nav button{background:transparent;font-size:12px;padding:8px 4px}
+.page{display:none}
+.page.active{display:block}
+input{width:100%;padding:12px;margin:7px 0;border-radius:8px;border:0}
+</style>
+</head>
+<body>
+<header>
+<h2>🚀 MY EARNING APP</h2>
+<p>Welcome to our community</p>
+</header>
+<main>
+<section id="home" class="page active">
+<div class="balance"><p>Available Balance</p><h1>৳0.00</h1></div>
+<div class="panel"><h3>📊 Dashboard</h3>
+<div class="grid">
+<div class="item">Complete Tasks<br>0</div>
+<div class="item">Total Ads<br>0</div>
+<div class="item">Total Bonus<br>৳0</div>
+<div class="item">Total Referral<br>0</div>
+</div></div>
+<div class="panel">🏆 Leaderboard Top 10<br>Coming Soon</div>
+</section>
+<section id="tasks" class="page">
+<h2>📋 Tasks</h2>
+<div class="panel">🎁 Daily Login Bonus<br><button>Claim</button></div>
+<div class="panel">📺 Watch Ads Video<br><button>Watch</button></div>
+<div class="panel">🎡 Spin Wheel<br><button>Spin</button></div>
+<div class="panel">📢 Telegram Subscribe<br><button>Check</button></div>
+</section>
+<section id="promote" class="page">
+<h2>📣 Promote</h2>
+<div class="panel">Promote your Telegram channel, group or video.</div>
+<input placeholder="Your promotion link">
+<button>Submit Promotion</button>
+</section>
+<section id="refer" class="page">
+<h2>👥 Refer Friends</h2>
+<div class="panel">Your Referral Link
+<input value="Referral link will appear here" readonly>
+<button>Copy Link</button>
+<p>Total Referrals: 0</p>
+<p>Referral Income: ৳0</p>
+</div>
+</section>
+<section id="account" class="page">
+<h2>👤 My Account</h2>
+<div class="panel">
+<p>Available Balance: ৳0</p>
+<button>Deposit</button>
+<button>Withdraw</button>
+<button>Settings</button>
+</div>
+<div class="panel">Transaction History<br>Coming Soon</div>
+</section>
+</main>
+<nav>
+<button onclick="showPage('home')">🏠<br>Home</button>
+<button onclick="showPage('tasks')">📋<br>Tasks</button>
+<button onclick="showPage('promote')">📣<br>Promote</button>
+<button onclick="showPage('refer')">👥<br>Refer</button>
+<button onclick="showPage('account')">👤<br>Account</button>
+</nav>
+<script>
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+</script>
+</body>
+  </html>
+  
